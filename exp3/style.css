@@ -1,0 +1,45 @@
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+.btn-custom {
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+/* Features Section */
+.feature-box {
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.feature-box:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
