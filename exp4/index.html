@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 4 - Responsive Photo Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="hero">
+            <h1>Responsive Photo Gallery</h1>
+            <p class="subtitle">
+                A grid-based gallery with hover effects, category filters, and a JavaScript preview viewer.
+            </p>
+            <div class="filters" id="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="nature">Nature</button>
+                <button class="filter-btn" data-filter="architecture">Architecture</button>
+                <button class="filter-btn" data-filter="travel">Travel</button>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="gallery" id="gallery">
+                <article class="photo-card" data-category="nature">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Mountain landscape">
+                    <div class="overlay">
+                        <h3>Mountain View</h3>
+                        <p>Nature</p>
+                    </div>
+                </article>
+
+                <article class="photo-card" data-category="architecture">
+                    <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80" alt="Modern architecture">
+                    <div class="overlay">
+                        <h3>Modern Structure</h3>
+                        <p>Architecture</p>
+                    </div>
+                </article>
+
+                <article class="photo-card" data-category="travel">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Beach travel scene">
+                    <div class="overlay">
+                        <h3>Beach Escape</h3>
+                        <p>Travel</p>
+                    </div>
+                </article>
+
+                <article class="photo-card" data-category="nature">
+                    <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80" alt="Forest trail">
+                    <div class="overlay">
+                        <h3>Forest Trail</h3>
+                        <p>Nature</p>
+                    </div>
+                </article>
+
+                <article class="photo-card" data-category="architecture">
+                    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=900&q=80" alt="Skyscraper skyline">
+                    <div class="overlay">
+                        <h3>Skyline</h3>
+                        <p>Architecture</p>
+                    </div>
+                </article>
+
+                <article class="photo-card" data-category="travel">
+                    <img src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?auto=format&fit=crop&w=900&q=80" alt="Travel road trip">
+                    <div class="overlay">
+                        <h3>Open Road</h3>
+                        <p>Travel</p>
+                    </div>
+                </article>
+            </div>
+
+            <p class="hint">Click any image to view it larger.</p>
+        </section>
+    </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="closeLightbox" aria-label="Close preview">&times;</button>
+        <img id="lightboxImage" alt="Preview image">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
