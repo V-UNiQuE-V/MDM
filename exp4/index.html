@@ -1,81 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Experiment 4 - Photo Gallery</title>
-  <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, sans-serif; background: #0f172a; color: #e2e8f0; }
-    .wrap { width: min(980px, 94vw); margin: 24px auto; }
-    h1 { margin: 0 0 8px; }
-    .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 16px; }
-    .filters button { border: 0; padding: 9px 12px; border-radius: 8px; cursor: pointer; background: #334155; color: #fff; }
-    .filters .active { background: #0ea5e9; color: #082f49; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
-    .card { position: relative; border-radius: 12px; overflow: hidden; cursor: pointer; }
-    .card img { width: 100%; height: 180px; object-fit: cover; display: block; transition: transform .25s; }
-    .card:hover img { transform: scale(1.06); }
-    .label { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px; background: linear-gradient(transparent, rgba(0,0,0,.75)); }
-    .hide { display: none; }
-    .viewer { position: fixed; inset: 0; background: rgba(2,6,23,.9); display: none; place-items: center; padding: 16px; }
-    .viewer.open { display: grid; }
-    .viewer img { width: min(860px, 92vw); max-height: 78vh; border-radius: 12px; object-fit: cover; }
-    .close { position: fixed; top: 14px; right: 14px; border: 0; width: 42px; height: 42px; border-radius: 999px; cursor: pointer; font-size: 26px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>experiment 4</title>
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+#tb1 {
+height: 80px; width: 296px; text-align: center; font-size: large;
+shape-rendering: crispEdges; margin-bottom: 0.5%;
+background-color: rgb(255, 217, 0);
+}
+
+#tb2, #toggle, #Animate {
+height: 50px; width: 150px; text-align: center;
+font-size: medium;
+shape-rendering: crispEdges; margin-bottom: 0.5%;
+background-color: cornflowerblue;
+}
+
+#hide, #show {
+height: 50px; width: 73px;
+text-align: center; font-size: medium;
+shape-rendering: crispEdges; margin-bottom: 0.5%;
+background-color: cornflowerblue;
+}
+</style>
+ 
+<script>
+function update_text() {
+document.getElementById("tb1").value = "text updated successfully"
+}
+
+$(document).ready(function () {
+$("#hide").click(function () {
+$("#tb1").hide(100);
+})
+$("#show").click(function () {
+$("#tb1").show(100);
+})
+$("#toggle").click(function () {
+$("#tb1").toggle(300);
+})
+$("#Animate").click(function () {
+$("#tb1").animate({ height: '200px', width: '500px', fontSize: '30px'
+}, 1000).animate({ height: '80px', width: '300px', fontSize: '18px'
+}, 1000);
+})
+})
+</script>
 </head>
 <body>
-  <div class="wrap">
-    <h1>Responsive Photo Gallery</h1>
-    <p>CSS Grid + Hover + JavaScript Filter/Preview</p>
-
-    <div class="filters">
-      <button class="active" data-filter="all">All</button>
-      <button data-filter="nature">Nature</button>
-      <button data-filter="city">City</button>
-      <button data-filter="travel">Travel</button>
-    </div>
-
-    <div class="grid" id="grid">
-      <div class="card" data-cat="nature"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Mountain"><div class="label">Mountain</div></div>
-      <div class="card" data-cat="city"><img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80" alt="Building"><div class="label">Building</div></div>
-      <div class="card" data-cat="travel"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Beach"><div class="label">Beach</div></div>
-      <div class="card" data-cat="nature"><img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80" alt="Forest"><div class="label">Forest</div></div>
-    </div>
-  </div>
-
-  <div class="viewer" id="viewer" aria-hidden="true">
-    <button class="close" id="closeBtn">&times;</button>
-    <img id="bigImg" alt="Preview">
-  </div>
-
-  <script>
-    const btns = document.querySelectorAll('.filters button');
-    const cards = document.querySelectorAll('.card');
-    const viewer = document.getElementById('viewer');
-    const bigImg = document.getElementById('bigImg');
-
-    btns.forEach(b => b.onclick = () => {
-      btns.forEach(x => x.classList.remove('active'));
-      b.classList.add('active');
-      const f = b.dataset.filter;
-      cards.forEach(c => c.classList.toggle('hide', !(f === 'all' || c.dataset.cat === f)));
-    });
-
-    cards.forEach(c => c.onclick = () => {
-      bigImg.src = c.querySelector('img').src;
-      viewer.classList.add('open');
-      viewer.setAttribute('aria-hidden', 'false');
-    });
-
-    function closeViewer() {
-      viewer.classList.remove('open');
-      viewer.setAttribute('aria-hidden', 'true');
-    }
-
-    document.getElementById('closeBtn').onclick = closeViewer;
-    viewer.onclick = e => { if (e.target === viewer) closeViewer(); };
-    document.onkeydown = e => { if (e.key === 'Escape') closeViewer(); };
-  </script>
+<h1>Implement jQuery effects</h1>
+<div class="textbox" id="text">
+<input type="text" id="tb1" name="t1" placeholder="enter your text">
+<div>
+<input type="button" id="tb2" name="t2" value="Update" onclick="update_text()">
+<input type="button" id="hide" name="t3" value="Hide">
+<input type="button" id="show" name="t4" value="Show">
+<br>
+<input type="button" id="toggle" name="t5" value="Toggle">
+<input type="button" id="Animate" name="t6" value="Animate">
+</div>
+</div>
 </body>
 </html>
