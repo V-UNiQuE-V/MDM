@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="books.xsl"?>
+<books>
+    <book>
+        <title>Web Technology</title>
+        <author>Deitel</author>
+        <price>450</price>
+    </book>
+    <book>
+        <title>XML and Web Services</title>
+        <author>Harold</author>
+        <price>520</price>
+    </book>
+    <book>
+        <title>Learning PHP</title>
+        <author>David Sklar</author>
+        <price>399</price>
+    </book>
+</books>
