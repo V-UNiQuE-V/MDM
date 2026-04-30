@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="books.xsl"?>
-<books>
-    <book>
-        <title>Web Technology</title>
-        <author>Deitel</author>
-        <price>450</price>
-    </book>
-    <book>
-        <title>XML and Web Services</title>
-        <author>Harold</author>
-        <price>520</price>
-    </book>
-    <book>
-        <title>Learning PHP</title>
-        <author>David Sklar</author>
-        <price>399</price>
-    </book>
-</books>
+<catalog>
+<book>
+<title>The Pragmatic Programmer</title>
+<author>Andy Hunt, Dave Thomas</author>
+<price>45.00</price>
+</book>
+<book>
+<title>Clean Code</title>
+<author>Robert C. Martin</author>
+<price>38.50</price>
+</book>
+<book>
+<title>Design Patterns</title>
+<author>Erich Gamma, Richard Helm</author>
+<price>55.99</price>
+</book>
+<book>
+<title>JavaScript: The Good Parts</title>
+<author>Douglas Crockford</author>
+<price>29.99</price>
+</book>
+</catalog>
